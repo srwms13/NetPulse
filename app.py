@@ -9,7 +9,7 @@ from datetime import datetime
 # Page Configuration
 # -------------------------------------------------------
 st.set_page_config(
-    page_title="NetPulse Pro",
+    page_title="NetPulse",
     page_icon="📡",
     layout="wide"
 )
@@ -166,7 +166,7 @@ def run_ping(host: str) -> tuple[str, int]:
 # Main UI
 # -------------------------------------------------------
 def main():
-    st.title("📡 NetPulse Pro: Network Monitor")
+    st.title("📡 NetPulse: Advanced Network Monitor")
     st.markdown(
         "A lightweight network monitoring and scanning dashboard built with **Python**, "
         "**Streamlit**, and **Nmap**."
