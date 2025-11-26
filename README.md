@@ -1,112 +1,118 @@
-# 📡 NetPulse – Network Scanner & Monitoring Dashboard
+# 📡 NetPulse -- Network Scanner & Monitoring Dashboard
 
-NetPulse is a lightweight **network monitoring** and **scanning** dashboard built with  
-**Python**, **Streamlit**, and **Nmap**. It provides a simple, visual way to:
+NetPulse is a lightweight **network discovery**, **port scanning**, and
+**connectivity testing** dashboard built with **Python**, **Streamlit**,
+and **Nmap**.
 
-- Discover devices on your network  
-- Inspect open ports on a specific host  
-- Quickly test connectivity with ping  
+It provides a clean, real-time UI for quickly inspecting devices and
+services on your local network.
 
----
+------------------------------------------------------------------------
 
 ## ✨ Features
 
-### 🏠 Network Overview (Subnet Scanner)
-- Scan any CIDR range (e.g., `192.168.1.0/24`)
-- Detect online devices
-- Show IP, MAC, vendor, hostname, last‑seen timestamp
-- Export results as CSV
+### 🏠 Subnet Scanner
 
-### 🔍 Deep Port Scan
-- Scan TCP ports 1–1024
-- Show port state, service name, and version (if available)
+-   Scan any CIDR (e.g., `192.168.1.0/24`)
+-   Detect active devices in real time
+-   Shows: IP, MAC, vendor, hostname, last-seen
+-   Export results (.csv)
 
-### ⚡ Connectivity Test (Ping)
-- Ping any IP or hostname
-- Show raw ping output
+### 🔍 Port Scanner
 
-### 📊 Clean Dashboard UI
-- Metrics & progress bars  
-- Modern Streamlit layout  
-- Ready to demo as a web dashboard
+-   TCP port scan (1--1024)
+-   Shows port state, service name, version (if available)
 
----
+### ⚡ Ping Tester
+
+-   Ping any host/IP
+-   Displays raw output & latency
+
+### 📊 Modern Dashboard UI
+
+-   Progress indicators
+-   Clear section layout
+-   Works in browser locally or via Docker
+
+------------------------------------------------------------------------
 
 ## 🛠 Tech Stack
 
-- **Language:** Python 3.x  
-- **Web Framework:** Streamlit  
-- **Scanner Engine:** Nmap (`python-nmap`)  
-- **Data Processing:** pandas  
-- **Container Support:** Docker (optional)
+-   **Python 3.x**
+-   **Streamlit** -- web dashboard
+-   **Nmap / python-nmap** -- scanning engine
+-   **pandas** -- data handling
+-   **Docker** (optional)
 
----
+------------------------------------------------------------------------
 
-## 🚀 Getting Started (Local)
+## 🚀 Getting Started
 
 ### 1. Clone the repository
-```bash
+
+``` bash
 git clone https://github.com/<your-username>/netpulse.git
 cd netpulse
 ```
 
 ### 2. Install dependencies
-```bash
+
+``` bash
 pip install -r requirements.txt
 ```
 
 ### 3. Run the dashboard
-```bash
+
+``` bash
 streamlit run app.py
 ```
 
----
+------------------------------------------------------------------------
 
 ## 📦 Project Structure
 
-```
-netpulse/
-│── app.py              # Main Streamlit dashboard
-│── scanner/
-│     ├── subnet_scan.py
-│     ├── port_scan.py
-│     └── ping_test.py
-│── assets/
-│     └── icons/
-│── README.md
-│── requirements.txt
-```
+    NetPulse/
+    │── app.py                 # Main Streamlit app (UI + logic)
+    │── src/
+    │    ├── scanner.py        # Network & port scanning engine
+    │    └── utils.py          # Ping + shared helper functions
+    │
+    │── requirements.txt       # Dependencies
+    │── README.md              # Documentation
+    │── .gitignore             # Ignored files
 
----
+------------------------------------------------------------------------
 
-## 🐳 Run with Docker (Optional)
+## 🐳 Docker (Optional)
 
-### Build the image:
-```bash
+### Build image
+
+``` bash
 docker build -t netpulse .
 ```
 
-### Run the container:
-```bash
+### Run container
+
+``` bash
 docker run -p 8501:8501 netpulse
 ```
 
----
+------------------------------------------------------------------------
 
 ## 📸 Demo Preview
 
-> You can add screenshots or GIF demos here once hosted.
+*Add screenshots or GIFs here after hosting the demo.*
 
----
+------------------------------------------------------------------------
 
 ## 🤝 Contributing
 
-Pull requests are welcome!  
-For major changes, please open an issue first to discuss what you want to modify.
+Pull requests are welcome.\
+For major changes, please open an issue to discuss your proposal.
 
----
+------------------------------------------------------------------------
 
 ## 📄 License
 
-MIT License  
+MIT License\
 © 2025 NetPulse

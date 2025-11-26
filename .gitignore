@@ -4,5 +4,6 @@ venv/
 .env
 .idea/
 .vscode/
+dist/
+build/
 *.log
-.DS_Store
