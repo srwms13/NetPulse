@@ -1,23 +1,23 @@
 import subprocess
 import platform
 
-def run_ping(host: str):
-    param = '-n' if platform.system().lower() == 'windows' else '-c'
-    command = ['ping', param, '4', host]
+def run_ping(host: str, count: int = 4):
+    param = "-n" if platform.system().lower() == "windows" else "-c"
+    command = ["ping", param, str(count), host]
 
     try:
-        process = subprocess.Popen(
+        proc = subprocess.Popen(
             command,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            text=True,
+            text=True
         )
-        stdout, stderr = process.communicate()
+        stdout, stderr = proc.communicate()
 
-        if process.returncode != 0 and stderr:
-            return stderr, process.returncode
+        if proc.returncode != 0 and stderr:
+            return stderr, proc.returncode
 
-        return stdout, process.returncode
+        return stdout, proc.returncode
 
     except Exception as e:
-        return f"Ping error: {e}", 1
+        return f"Ping Error: {e}", 1
