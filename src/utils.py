@@ -1,8 +1,10 @@
 import subprocess
 import platform
+import shlex
 
 def run_ping(host: str, count: int = 4):
     param = "-n" if platform.system().lower() == "windows" else "-c"
+    host = shlex.quote(host)
     command = ["ping", param, str(count), host]
 
     try:
